@@ -1,0 +1,18 @@
+CREATE TABLE fb_product (
+  fbproductid int(11) NOT NULL AUTO_INCREMENT,
+  fbproductname varchar(20) DEFAULT NULL,
+  fbproduct_description varchar(250) DEFAULT NULL,
+  unit_price decimal(13,2) DEFAULT NULL,
+  fbproduct_image varchar(20) DEFAULT NULL,
+  active bit(1) DEFAULT b'1',
+  available_stock int(11) DEFAULT NULL,
+  date_created date. 
+  last_updated date,  
+  fbcategoryid int(11) ,
+  PRIMARY KEY (fbproductid),
+  UNIQUE KEY fbproductname_UNIQUE (fbproductname),
+  KEY fk_catid_idx (fbcategoryid),
+  CONSTRAINT fk_catid FOREIGN KEY (fbcategoryid) REFERENCES food_category (fbcategoryid) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ;
+
+select * from fb_product;
